@@ -12,7 +12,7 @@ import numpy as np
 # ---------------- Configuration ----------------
 SEED_URL = "https://computing.sjp.ac.lk/"
 # Whitelist: only crawl pages containing any of these substrings
-WHITELIST_KEYWORDS = ["courses", "computing.sjp.ac.lk", "deans-office", "staff", "departments", 
+WHITELIST_KEYWORDS = ["courses", "computing.sjp.ac.lk", "staff", "departments", 
                       "bachelor-of-computing-honours", "contact"]
 MAX_PAGES = 50
 CRAWL_DELAY = 0.5
