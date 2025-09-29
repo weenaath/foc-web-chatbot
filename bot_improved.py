@@ -1,313 +1,193 @@
-# bot_improved.py
 import time
 import requests
-from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
 import re
 import os
 import pickle
-from tqdm import tqdm
-import numpy as np
-
-# Embedding model
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
 
-# Try to import faiss, else fallback
-try:
-    import faiss
-    _HAS_FAISS = True
-except Exception:
-    _HAS_FAISS = False
+# ---------------- Configuration ----------------
+SEED_URL = "https://computing.sjp.ac.lk/"
+# Whitelist: only crawl pages containing any of these substrings
+WHITELIST_KEYWORDS = ["courses", "computing.sjp.ac.lk", "deans-office", "staff", "departments", 
+                      "bachelor-of-computing-honours", "contact"]
+MAX_PAGES = 50
+CRAWL_DELAY = 0.5
 
-# ---------------------------
-# Configuration (tweakable)
-# ---------------------------
-SEED_URL = "https://computing.sjp.ac.lk/"    
-MAX_PAGES = 200          # how many pages to crawl at most
-CRAWL_DELAY = 0.8        # seconds between requests (be polite)
-CHUNK_SENTENCES = 2      # target sentences per chunk
-CHUNK_OVERLAP = 1        # overlapping sentences between chunks
-TOP_K = 5                # how many top chunks to retrieve
+CHUNK_SENTENCES = 2
+CHUNK_OVERLAP = 1
+TOP_K = 8
 MODEL_NAME = "all-MiniLM-L6-v2"
 
-# ---------------------------
-# Utilities: robots check (basic)
-# ---------------------------
-from urllib.robotparser import RobotFileParser
-def allowed_by_robots(url, user_agent="*"):
-    parsed = urlparse(url)
-    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
-    rp = RobotFileParser()
+# ---------------- Helpers ----------------
+
+def allowed_domain(url):
+    # allow only your domain
+    p = urlparse(url)
+    return "computing.sjp.ac.lk" in p.netloc
+
+def url_whitelisted(url):
+    # decide whether to crawl this url
+    for kw in WHITELIST_KEYWORDS:
+        if kw in url:
+            return True
+    return False
+
+def fetch_page_text(url):
     try:
-        rp.set_url(robots_url)
-        rp.read()
-        return rp.can_fetch(user_agent, url)
-    except Exception:
-        return True  # if robots unreachable, be conservative but allow for now
+        resp = requests.get(url, timeout=7)
+        resp.raise_for_status()
+    except Exception as e:
+        print("Fetch error:", url, e)
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    # remove scripts/styles
+    for tag in soup(["script", "style", "nav", "footer", "header", "aside"]):
+        tag.decompose()
+    # extract headings
+    heading_text = " ".join(h.get_text(" ", strip=True) for h in soup.find_all(["h1","h2","h3"]))
+    body = soup.get_text(separator=" ")
+    # combine headings + body
+    text = heading_text + " " + body
+    text = " ".join(text.split())
+    title = soup.title.string.strip() if soup.title else url
+    return {"url": url, "title": title, "text": text}
 
-# ---------------------------
-# Crawl multiple pages (domain-limited BFS)
-# ---------------------------
-def crawl_site(seed_url, max_pages=MAX_PAGES):
-    parsed_seed = urlparse(seed_url)
-    base_netloc = parsed_seed.netloc
-
-    to_visit = {seed_url}
+def crawl_whitelist(start_url):
+    to_visit = {start_url}
     visited = set()
     pages = []
-
-    headers = {"User-Agent": "FacultyQA-Bot/1.0 (+https://computing.sjp.ac.lk/)"}
-
-    while to_visit and len(visited) < max_pages:
+    while to_visit and len(visited) < MAX_PAGES:
         url = to_visit.pop()
-        if url in visited: 
+        if url in visited:
             continue
-        if urlparse(url).netloc != base_netloc:
-            continue
-        if not allowed_by_robots(url):
-            print("Skipping (robots):", url)
+        if not allowed_domain(url):
             visited.add(url)
             continue
-        try:
-            r = requests.get(url, headers=headers, timeout=10)
-            r.raise_for_status()
-            soup = BeautifulSoup(r.text, "html.parser")
-
-            # Extract page title and main text (prefer <main>, <article>)
-            title = (soup.title.string.strip() if soup.title else url)
-            main = soup.find("main") or soup.find("article")
-            if main:
-                texts = main.get_text(separator=" ")
-            else:
-                # as fallback, exclude nav/footer/script/style
-                for s in soup(["script", "style", "nav", "footer", "header"]):
-                    s.decompose()
-                texts = soup.get_text(separator=" ")
-
-            # Extract headings
-            headings = " ".join(h.get_text(" ", strip=True) for h in soup.find_all(["h1","h2","h3"]))
-            # Combine headings + body text
-            text = " ".join((headings + " " + texts).split())
-
-            pages.append({"url": url, "title": title, "text": text})
-            visited.add(url)
-
-            # Find internal links and add to to_visit
-            for a in soup.find_all("a", href=True):
-                href = a['href'].strip()
-                # build absolute
-                href = urljoin(url, href)
-                parsed = urlparse(href)
-                # only same domain, http/https, remove fragments
-                if parsed.scheme not in ("http", "https"):
-                    continue
-                href = href.split("#")[0]
-                if parsed.netloc == base_netloc and href not in visited and href not in to_visit:
-                    to_visit.add(href)
-
-            time.sleep(CRAWL_DELAY)
-        except Exception as e:
-            # don't crash the crawl on a single page error
-            print("Error fetching", url, ":", str(e))
-            visited.add(url)
+        page = fetch_page_text(url)
+        visited.add(url)
+        if page is None:
             continue
-
+        # only keep white-listed pages
+        if url_whitelisted(url):
+            pages.append(page)
+        # find links
+        soup = BeautifulSoup(requests.get(url).text, "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = urljoin(url, a["href"])
+            href = href.split("#")[0]
+            if href not in visited and allowed_domain(href):
+                to_visit.add(href)
+        time.sleep(CRAWL_DELAY)
     return pages
 
-# ---------------------------
-# Text -> sentences -> chunking (with overlap)
-# ---------------------------
-_SENT_SPLIT_RE = re.compile(r'(?<=[.!?])\s+')
-
+# Sentence splitting + chunking with overlap
+_SENT_RE = re.compile(r'(?<=[.!?])\s+')
 def split_sentences(text):
-    # simple sentence splitter (no external NLTK dependency)
-    sents = [s.strip() for s in _SENT_SPLIT_RE.split(text) if s.strip()]
-    return sents
+    return [s.strip() for s in _SENT_RE.split(text) if s.strip()]
 
-def chunk_sentences_from_text(text, chunk_size=CHUNK_SENTENCES, overlap=CHUNK_OVERLAP):
-    sents = split_sentences(text)
+def chunk_texts(pages):
     chunks = []
-    i = 0
-    while i < len(sents):
-        chunk_sents = sents[i:i+chunk_size]
-        chunk_text = " ".join(chunk_sents)
-        chunks.append(chunk_text)
-        if i + chunk_size >= len(sents):
-            break
-        i += (chunk_size - overlap)
-    return chunks
-
-def pages_to_chunks(pages):
-    chunk_records = []  # each item: {id, url, title, chunk_text}
     cid = 0
     for p in pages:
-        chunks = chunk_sentences_from_text(p['text'], CHUNK_SENTENCES, CHUNK_OVERLAP)
-        for c in chunks:
-            chunk_records.append({"id": cid, "url": p['url'], "title": p['title'], "text": c})
-            cid += 1
-    return chunk_records
+        sents = split_sentences(p["text"])
+        i = 0
+        n = len(sents)
+        while i < n:
+            block = sents[i : i + CHUNK_SENTENCES]
+            if block:
+                chunk = " ".join(block)
+                chunks.append({"id": cid, "url": p["url"], "title": p["title"], "text": chunk})
+                cid += 1
+            if i + CHUNK_SENTENCES >= n:
+                break
+            i += (CHUNK_SENTENCES - CHUNK_OVERLAP)
+    return chunks
 
-# ---------------------------
-# Build or load embeddings + index
-# ---------------------------
 class Retriever:
     def __init__(self, model_name=MODEL_NAME):
         self.model = SentenceTransformer(model_name)
-        self.index = None
-        self.metadata = []
         self.embeddings = None
-
-    def build(self, chunk_records, use_faiss=_HAS_FAISS):
-        texts = [r['text'] for r in chunk_records]
-        # encode -> numpy array
+        self.meta = []
+    def build(self, chunks):
+        texts = [c["text"] for c in chunks]
         emb = self.model.encode(texts, show_progress_bar=True, convert_to_numpy=True)
-        # normalize for cosine with dot-product
+        # normalize
         norms = np.linalg.norm(emb, axis=1, keepdims=True)
-        norms[norms==0] = 1e-9
-        emb = emb / norms
-
+        emb = emb / (norms + 1e-9)
         self.embeddings = emb
-        self.metadata = chunk_records
-
-        if use_faiss:
-            dim = emb.shape[1]
-            # inner-product on normalized vectors == cosine similarity
-            index = faiss.IndexFlatIP(dim)
-            index.add(emb.astype(np.float32))
-            self.index = index
-        else:
-            self.index = None
-
-    def save(self, path="index_data"):
+        self.meta = chunks
+    def save(self, path="refined_index"):
         os.makedirs(path, exist_ok=True)
-        # embeddings
-        np.save(os.path.join(path, "embeddings.npy"), self.embeddings)
+        np.save(os.path.join(path, "emb.npy"), self.embeddings)
         with open(os.path.join(path, "meta.pkl"), "wb") as f:
-            pickle.dump(self.metadata, f)
-        if _HAS_FAISS and self.index is not None:
-            faiss.write_index(self.index, os.path.join(path, "faiss.idx"))
-
-    def load(self, path="index_data"):
-        self.embeddings = np.load(os.path.join(path, "embeddings.npy"))
+            pickle.dump(self.meta, f)
+    def load(self, path="refined_index"):
+        self.embeddings = np.load(os.path.join(path, "emb.npy"))
         with open(os.path.join(path, "meta.pkl"), "rb") as f:
-            self.metadata = pickle.load(f)
-        if _HAS_FAISS:
-            try:
-                self.index = faiss.read_index(os.path.join(path, "faiss.idx"))
-            except Exception:
-                self.index = None
-
+            self.meta = pickle.load(f)
     def query(self, question, top_k=TOP_K):
-        q_emb = self.model.encode([question], convert_to_numpy=True)
-        q_emb = q_emb / (np.linalg.norm(q_emb, axis=1, keepdims=True) + 1e-9)
-        if self.index is not None:
-            # use faiss
-            D, I = self.index.search(q_emb.astype(np.float32), top_k)
-            scores = D[0].tolist()
-            idxs = I[0].tolist()
-        else:
-            # fallback: cosine with numpy
-            sims = (self.embeddings @ q_emb.T).squeeze()  # dot with normalized vectors
-            idxs = np.argsort(-sims)[:top_k].tolist()
-            scores = sims[idxs].tolist()
-        results = []
-        for i, s in zip(idxs, scores):
-            results.append({"score": float(s), "meta": self.metadata[i]})
-        return results
+        qv = self.model.encode([question], convert_to_numpy=True)
+        qv = qv / (np.linalg.norm(qv, axis=1, keepdims=True) + 1e-9)
+        sims = (self.embeddings @ qv.T).squeeze()
+        idxs = np.argsort(-sims)[:top_k]
+        return [{"score": float(sims[i]), "meta": self.meta[i]} for i in idxs]
 
-# ---------------------------
-# Answer synthesis: pick best sentences from top chunks
-# ---------------------------
-def synthesize_answer(question, top_chunks, retriever, max_sentences=3):
-    # collect sentences from top chunks
-    all_sents = []
-    sent_origin = []
-    for r in top_chunks:
-        txt = r['meta']['text']
-        sents = split_sentences(txt)
-        for s in sents:
-            all_sents.append(s)
-            sent_origin.append({"url": r['meta']['url'], "title": r['meta']['title']})
-
-    if not all_sents:
-        return "No text available to answer."
-
-    # encode sentences in batch (efficient)
-    sent_embs = retriever.model.encode(all_sents, convert_to_numpy=True)
-    # normalize
+def synthesize(question, candidates):
+    # find sentences within those chunks
+    sents = []
+    sent_meta = []
+    for c in candidates:
+        ts = split_sentences(c["meta"]["text"])
+        for s in ts:
+            sents.append(s)
+            sent_meta.append({"url": c["meta"]["url"], "title": c["meta"]["title"]})
+    if not sents:
+        return {"answer": "Sorry, I couldn't find information.", "sources": [], "confidence": 0.0}
+    sent_embs = Retriever().model.encode(sents, convert_to_numpy=True)
+    # normalization
     sent_embs = sent_embs / (np.linalg.norm(sent_embs, axis=1, keepdims=True) + 1e-9)
-    q_emb = retriever.model.encode([question], convert_to_numpy=True)
-    q_emb = q_emb / (np.linalg.norm(q_emb, axis=1, keepdims=True) + 1e-9)
-
-    sims = (sent_embs @ q_emb.T).squeeze()
-    # Rank normally
-    top_idx = np.argsort(-sims)[:max_sentences*3]  # get a wider pool
-
-    # Try to pick sentences with keywords first
-    priority = [i for i in top_idx if re.search(r"Bachelor|Honours", all_sents[i], re.IGNORECASE)]
-    if priority:
-        top_idx = priority[:max_sentences]
-    else:
-        top_idx = top_idx[:max_sentences]
-
-    chosen = []
+    qv = Retriever().model.encode([question], convert_to_numpy=True)
+    qv = qv / (np.linalg.norm(qv, axis=1, keepdims=True) + 1e-9)
+    sims = (sent_embs @ qv.T).squeeze()
+    top = np.argsort(-sims)[:2]  # pick up to 2 sentences
+    answer = " ".join(sents[i] for i in top)
     sources = []
-    for i in top_idx:
-        chosen.append(all_sents[int(i)])
-        sources.append(sent_origin[int(i)])
-    answer = " ".join(chosen)
-    # compact answer + sources + confidence
-    source_lines = []
-    for s in sources:
-        source_lines.append(f"{s['title']} - {s['url']}")
-    return {
-        "answer": answer,
-        "sources": list(dict.fromkeys(source_lines)),  # unique
-        "confidence": float(np.mean(sims[top_idx]))
-    }
+    for i in top:
+        sources.append(f"{sent_meta[i]['title']} - {sent_meta[i]['url']}")
+    return {"answer": answer, "sources": list(dict.fromkeys(sources)), "confidence": float(np.mean(sims[top]))}
 
-# ---------------------------
-# Putting it all together
-# ---------------------------
-def build_and_save_index(seed_url=SEED_URL):
-    print("Crawling site...")
-    pages = crawl_site(seed_url, max_pages=MAX_PAGES)
-    print(f"Pages crawled: {len(pages)}")
-    print("Converting pages to chunks...")
-    chunks = pages_to_chunks(pages)
-    print("Number of chunks:", len(chunks))
-
-    print("Building retriever and embeddings...")
-    r = Retriever()
-    r.build(chunks)
-    r.save()
-    print("Index saved to ./index_data")
-    return r
-
-def load_index(path="index_data"):
-    r = Retriever()
-    r.load(path)
-    return r
-
-# Small interactive demo
+# Main
 if __name__ == "__main__":
-    if not os.path.exists("index_data"):
-        retriever = build_and_save_index(SEED_URL)
+    # Build or load
+    if not os.path.exists("refined_index"):
+        print("Crawling and building index …")
+        pages = crawl_whitelist(SEED_URL)
+        print("Pages:", len(pages))
+        chunks = chunk_texts(pages)
+        print("Chunks:", len(chunks))
+        retr = Retriever()
+        retr.build(chunks)
+        retr.save()
     else:
-        retriever = load_index("index_data")
-        print("Index loaded. chunks:", len(retriever.metadata))
+        retr = Retriever()
+        retr.load()
+        print("Index loaded, chunks:", len(retr.meta))
 
-    print("Ready. Ask questions (type 'exit'):")
+    print("Ready to answer! (type 'exit')")
     while True:
         q = input("You: ").strip()
-        if q.lower() in ("exit","quit"):
+        if q.lower() in ("exit", "quit"):
             break
-        top = retriever.query(q, top_k=TOP_K)
-        synth = synthesize_answer(q, top, retriever, max_sentences=3)
+        cands = retr.query(q, TOP_K)
+        resp = synthesize(q, cands)
         print("\n--- Answer ---\n")
-        print(synth['answer'])
+        print(resp["answer"])
         print("\nSources:")
-        for s in synth['sources']:
+        for s in resp["sources"]:
             print("-", s)
-        print(f"\nConfidence (mean cosine): {synth['confidence']:.3f}\n")
+        print("Confidence:", resp["confidence"])
+        print("\n----------------\n")
