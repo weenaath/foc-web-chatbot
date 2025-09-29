@@ -23,7 +23,7 @@ except Exception:
 # ---------------------------
 # Configuration (tweakable)
 # ---------------------------
-SEED_URL = "https://fcsc.sjp.ac.lk/"    # <- change to your faculty site
+SEED_URL = "https://computing.sjp.ac.lk/"    
 MAX_PAGES = 200          # how many pages to crawl at most
 CRAWL_DELAY = 0.8        # seconds between requests (be polite)
 CHUNK_SENTENCES = 6      # target sentences per chunk
@@ -57,7 +57,7 @@ def crawl_site(seed_url, max_pages=MAX_PAGES):
     visited = set()
     pages = []
 
-    headers = {"User-Agent": "FacultyQA-Bot/1.0 (+https://your-site.example)"}
+    headers = {"User-Agent": "FacultyQA-Bot/1.0 (+https://computing.sjp.ac.lk/)"}
 
     while to_visit and len(visited) < max_pages:
         url = to_visit.pop()
