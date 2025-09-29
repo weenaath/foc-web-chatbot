@@ -26,8 +26,8 @@ except Exception:
 SEED_URL = "https://computing.sjp.ac.lk/"    
 MAX_PAGES = 200          # how many pages to crawl at most
 CRAWL_DELAY = 0.8        # seconds between requests (be polite)
-CHUNK_SENTENCES = 6      # target sentences per chunk
-CHUNK_OVERLAP = 2        # overlapping sentences between chunks
+CHUNK_SENTENCES = 2      # target sentences per chunk
+CHUNK_OVERLAP = 1        # overlapping sentences between chunks
 TOP_K = 5                # how many top chunks to retrieve
 MODEL_NAME = "all-MiniLM-L6-v2"
 
@@ -85,7 +85,11 @@ def crawl_site(seed_url, max_pages=MAX_PAGES):
                     s.decompose()
                 texts = soup.get_text(separator=" ")
 
-            text = " ".join(texts.split())
+            # Extract headings
+            headings = " ".join(h.get_text(" ", strip=True) for h in soup.find_all(["h1","h2","h3"]))
+            # Combine headings + body text
+            text = " ".join((headings + " " + texts).split())
+
             pages.append({"url": url, "title": title, "text": text})
             visited.add(url)
 
@@ -237,7 +241,15 @@ def synthesize_answer(question, top_chunks, retriever, max_sentences=3):
     q_emb = q_emb / (np.linalg.norm(q_emb, axis=1, keepdims=True) + 1e-9)
 
     sims = (sent_embs @ q_emb.T).squeeze()
-    top_idx = np.argsort(-sims)[:max_sentences]
+    # Rank normally
+    top_idx = np.argsort(-sims)[:max_sentences*3]  # get a wider pool
+
+    # Try to pick sentences with keywords first
+    priority = [i for i in top_idx if re.search(r"Bachelor|Honours", all_sents[i], re.IGNORECASE)]
+    if priority:
+        top_idx = priority[:max_sentences]
+    else:
+        top_idx = top_idx[:max_sentences]
 
     chosen = []
     sources = []
