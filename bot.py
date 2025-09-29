@@ -1,49 +1,38 @@
-import requests
-from bs4 import BeautifulSoup
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
+import os
+from openai import OpenAI
+from dotenv import load_dotenv
 
-def get_text_from_url(url):
-    # Download the webpage
-    response = requests.get(url)
-    
-    # Parse HTML
-    soup = BeautifulSoup(response.text, "html.parser")
-    
-    # Remove scripts and styles (if any)
-    for s in soup(["script", "style"]):
-        s.extract()
-        
-    # Extract visible text
-    text = soup.get_text()
-    
-    # Clean: remove extra spaces and newlines
-    text = " ".join(text.split())
-    return text
+# Load API key from .env
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def chunk_text(text, size=200):
-    words = text.split()
-    return [" ".join(words[i:i+size]) for i in range(0, len(words), size)]
+# Step 1: Create an assistant (only once, you can reuse its ID later)
+assistant = client.beta.assistants.create(
+    name="FOC Website Q&A Bot",
+    instructions="You are a helpful assistant that answers questions about the Faculty of Computing, University of Sri Jayewardenepura.",
+    model="gpt-4o-mini",   # fast + cost efficient
+)
 
-# Load data
-url = "https://computing.sjp.ac.lk/"
-content = get_text_from_url(url)
-chunks = chunk_text(content, size=200)
+print("Assistant created:", assistant.id)
 
-# Encode with Sentence-BERT
-model = SentenceTransformer("all-MiniLM-L6-v2")
-embeddings = model.encode(chunks)
+# Step 2: Create a thread (a conversation context)
+thread = client.beta.threads.create()
 
-def get_answer(question):
-    q_vec = model.encode([question])
-    sims = cosine_similarity(q_vec, embeddings)
-    idx = np.argmax(sims)
-    return chunks[idx]
+# Step 3: Add a user message
+client.beta.threads.messages.create(
+    thread_id=thread.id,
+    role="user",
+    content="What are the available courses?"
+)
 
-if __name__ == "__main__":
-    while True:
-        q = input("Ask a question (or 'exit'): ")
-        if q.lower() == "exit":
-            break
-        print("Answer:", get_answer(q))
+# Step 4: Run the assistant on the thread
+run = client.beta.threads.runs.create_and_poll(
+    thread_id=thread.id,
+    assistant_id=assistant.id
+)
+
+# Step 5: Print responses
+messages = client.beta.threads.messages.list(thread_id=thread.id)
+for msg in messages.data:
+    if msg.role == "assistant":
+        print("Assistant:", msg.content[0].text.value)
