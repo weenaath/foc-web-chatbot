@@ -31,6 +31,18 @@ def chat_with_bot(user_input):
         return response.choices[0].message.content
     except Exception as e:
         return f"⚠️ Error: {e}"
+    
+def polish_answer(answer: str) -> str:
+    # Very light cleanup
+    answer = answer.strip()
+    # Capitalize first letter if missing
+    if answer and not answer[0].isupper():
+        answer = answer[0].upper() + answer[1:]
+    # Ensure it ends with proper punctuation
+    if answer and answer[-1] not in ".!?":
+        answer += "."
+    return answer
+
 
 if __name__ == "__main__":
     print("🤖 Faculty Chatbot (Groq API) is running! Type 'quit' to exit.")
@@ -40,4 +52,5 @@ if __name__ == "__main__":
             print("👋 Goodbye!")
             break
         answer = chat_with_bot(user_input)
+        answer = polish_answer(answer)
         print(f"Bot: {answer}")
