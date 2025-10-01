@@ -1,59 +1,37 @@
 import os
-import requests
+from groq import Groq
 from dotenv import load_dotenv
 
-# Load API key
+# Load environment variables
 load_dotenv()
-API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-if not API_KEY:
-    raise ValueError("⚠️ GROQ_API_KEY not found. Please add it to your .env file.")
+#Initialize Groq client
+client = Groq(api_key=GROQ_API_KEY)
 
-# Chat function
-def chat_with_bot(user_message):
-    url = "https://api.groq.com/openai/v1/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json"
-    }
-    
-    data = {
-        "model": "llama-3.3-70b-versatile",  # or "llama3-8b-8192" (faster, smaller)
-        "messages": [
-            {"role": "system", "content": """
-You are a helpful assistant for the Faculty of Computing, University of Sri Jayewardenepura.
-Carefully check the site https://computing.sjp.ac.lk for accurate information before answering.
-Answer ONLY using the information below. If you don’t know, say: 
-'I don’t know. Please visit https://computing.sjp.ac.lk for more details.'
+# Load faculty content
+with open("faculty_content.txt", "r", encoding="utf-8") as f:
+    FACULTY_CONTENT = f.read()
 
-📚 Courses Offered:
-- Bachelor of Computing Honours in Computer Science
-- Bachelor of Computing Honours in Software Engineering
-- Bachelor of Computing Honours in Information Systems
+def chat_with_bot(user_input):
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.1-8b-instant",   # Groq recommended fast model
+            messages=[
+                {"role": "system", "content": (
+                    "You are a helpful assistant that answers questions "
+                    "about the Faculty of Computing at University of Sri Jayewardenepura. "
+                    "Only use the following information as your knowledge base:\n\n"
+                    + FACULTY_CONTENT
+                )},
+                {"role": "user", "content": user_input}
+            ],
+            temperature=0.2  # lower = more focused, less random
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        return f"⚠️ Error: {e}"
 
-🏛 Departments:
-- Department of Computer Science
-- Department of Software Engineering
-- Department of Information Systems
-
-📞 Contact: https://computing.sjp.ac.lk/index.php/contact/
-            """},
-            {"role": "user", "content": user_message}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 500
-    }
-    
-    response = requests.post(url, headers=headers, json=data)
-    
-    # If bad request, show raw error
-    if response.status_code != 200:
-        raise Exception(f"API Error {response.status_code}: {response.text}")
-    
-    result = response.json()
-    return result["choices"][0]["message"]["content"]
-
-# Main loop
 if __name__ == "__main__":
     print("🤖 Faculty Chatbot (Groq API) is running! Type 'quit' to exit.")
     while True:
@@ -61,8 +39,5 @@ if __name__ == "__main__":
         if user_input.lower() in ["quit", "exit"]:
             print("👋 Goodbye!")
             break
-        try:
-            answer = chat_with_bot(user_input)
-            print("Bot:", answer)
-        except Exception as e:
-            print(f"⚠️ Error: {e}")
+        answer = chat_with_bot(user_input)
+        print(f"Bot: {answer}")
