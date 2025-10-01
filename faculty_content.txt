@@ -1,0 +1,705 @@
+
+
+--- HOME ---
+Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Welcome to the Faculty of Computing
+Faculty of Computing (FoC) is the newest and the very first faculty dedicated solely to the emerging computing and related disciplines among public sectors universities in Sri Lanka. FoC to…
+Read More
+COURSES
+Bachelor of Computing Honours in Computer Science Bachelor of Computing Honours in Software Engineering Bachelor of Computing Honours in Information Systems
+Read More
+Notices
+Read More
+FoC Calendar – 2025
+Read More
+Research
+The Faculty of Computing at the University of Sri Jayewardenepura is committed to advancing knowledge and innovation in computing and information technology. Our research spans areas such as software engineering,…
+Read More
+Welcome to the Faculty of Computing
+Faculty of Computing (FoC) is the newest and the very first faculty dedicated solely to the emerging computing and related disciplines among public sectors universities in Sri Lanka. FoC to be established as the 11th faculty of the prestigious University of Sri Jayewardenepura. In adhere with national export strategy and in response to the ever-increasing demand from IT and BPO service sector for a continued supply of workforce with information age skills, the University of Sri Jayewardenepura took up the challenge for establishment of FoC.
+Computing and related sub-disciplines of its periphery are emerging as key disciplines of the 21st Century. In order to cater global demand for skill-workforce, FoC has design and offers unique and very first three Bachelor of Computing Honours Degree Programs in Sri Lanka as listed below covering all major fields inclusive of state-of-the-art computing and related knowledge areas while assuring passing out graduates also with hands on experiences on cutting edge technologies.
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Software Engineering
+Bachelor of Computing Honours in Information Systems
+In these three-degree programs of FoC, relevant knowledge areas and competencies are to be inculcated among undergraduates mainly through three academic departments as below.
+Department of Scientific Computing
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+The FoC also intends to launch cutting-edge research within the contexts of postgraduate education as well as R&D projects in emerging fields of computing and related sub-disciplines that are with the greater potential in contributing to socio-economic and national development.
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+The Faculty of Computing, University of Sri Jayewardenepura (USJ), has signed a landmark Memorandum of Understanding (MoU) with HUTCH, a leading telecommunication service provider in Sri Lanka, to strengthen the industry readiness of its undergraduates. The ceremonial signing took place on 24th September 2025, marking the beginning of a strategic collaboration aimed at bridging the…
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+In line with its mission to build strong partnerships with leading IT industries, the Faculty of Computing at the University of Sri Jayewardenepura organized an industry visit to IFS R&D International Pvt Ltd, a global leader in Industrial AI™ solutions, on 26th and 29th July, and 6th August 2025. During those visits, a total of…
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+As part of its ongoing initiative to strengthen academia-industry collaboration, the Faculty of Computing at the University of Sri Jayewardenepura organized an inspiring field visit to CodeGen International (Pvt) Ltd on 15th and 22nd July, and 5th August 2025. Over the course of three days, 150 undergraduates were introduced to CodeGen’s dynamic ecosystem of home-grown…
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Strengthening its commitment to bridging academic learning with industry innovation, the Faculty of Computing arranged a student field visit to Cambio Software Sri Lanka on 23rd, 24th, and 29th July 2025. A total of 150 students participated in this hands-on learning experience with one of Sri Lanka’s leading healthcare IT solution providers. Cambio is at…
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+The Faculty of Computing proudly facilitated an industry visit to Hutchison Telecommunications Lanka (Pvt) Ltd on 17th July 2025, offering 75 undergraduates’ firsthand exposure to the core infrastructure of a modern telecom operator. As a part of CK Hutchison Holdings, HUTCH has integrated global telecommunications expertise with local innovation, making it an ideal learning ground…
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- STAFF ---
+Staff – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Staff
+Academic
+Prof. Prasad M. Jayaweera
+(Dean / Professor of Information Systems Engineering and Informatics)
+B.Sc.(Hons)(Comp. Sci.) (UOC, Sri Lanka), Ph.L. and Ph.D. (Stockholm)
+Fields of Interest: Information Systems Engineering, Standards, and eCommerce Systems Designing, Motivation/Service/Process and Conceptual Modeling
+Email:
+pja@sjp.ac.lk
+Tel: +94 11 275 8909
+Dr. Dhammika Pieris
+(Senior Lecturer)
+BSc (Mathematics), PGD (Comp. Tech), MPhil (Comp. Sci), PhD (Comp. Sci)
+Fields of Interest: Information Systems
+Email:
+dhammikapieris@sjp.ac.lk
+Tel: +94 11 275 8909
+Dr. T.D.G. Geethika
+(Head – Department of Information Systems Engineering and Informatics / Senior Lecturer)
+BSc. (Peradeniya, S.L.) , M.Sc. (UCSC, S.L.), MPhil (UCSC, S.L)
+Fields of Interest: Information Systems Engineering,  Conceptual Modeling, Process/Rule Modeling
+Email: gilmini@sjp.ac.lk
+Tel: +94 719410222
+Dr. Budditha Hettige
+(Senior Lecturer)
+PhD(Moratuwa), MPhil(Moratuwa), BSc(USJ)
+Fields of Interest: Multi-Agent Systems, Natural Language Processing
+Email:
+budditha@sjp.ac.lk
+Tel: +94-766229829
+Dr. D.G.N.D. Jayarathna
+(Head – Department of Scientific Computing / Senior Lecturer)
+PhD (USJP), MSc (Maths Education) (UOC), BSc (Maths) (special) (UOC)
+Fields of Interest: Mathematical Modeling, Transport Planning
+Email:
+nuwan@sjp.ac.lk
+Tel: +94716 25 35 92 / +94770 24 81 92
+Dr. M.D.S. Seneviratne
+(Head – Knowledge Engineering and Communication / Senior Lecturer)
+PhD(Colombo, SL) MSc(Wales, UK) B.Sc.(Eng.)(Moratuwa, SL)
+Fields of Interest: “Artificial Intelligence, Machine Learning, Deep Learning
+Email:
+deepikas@sjp.ac.lk
+Tel: +94 768093690
+Dr. S. Majuran
+(Senior Lecturer)
+Ph.D. in Computer Science (UoJ, SL), BSc. (Spl) in Computer Science (UoJ, SL)
+Email:
+shajini@sjp.ac.lk
+Tel:
+Mr. L D P S Jayasekara
+(Lecturer)
+Fields of Interest: Internet of Things (IoT), Wireless Sensor Network, Embedded System / Cyber-Physical Systems, Ultra-Low Power Systems
+Email:
+pubudu@sjp.ac.lk
+Tel: +94 711612267
+Ms. M. M. V. Senanayake
+Lecturer (Probationary)
+Fields of Interest:  Medical Image Processing, Artificial Intelligence, Machine Learning
+Email:
+vindya@sjp.ac.lk
+Tel:
+Ms. R.J.P.K. Rajakaruna
+(Lecturer (Probationary))
+Email:
+jayaniprabhashini@sjp.ac.lk
+Tel:
+Web:
+Mr. K. A. T. S. Jayathilaka
+(Lecturer (On Contract))
+Email:
+thilinasj@sjp.ac.lk
+Tel:
+Web:
+Dr. Lalith Premaratne
+(Lecturer (On Contract))
+Email:
+Tel:
+Web:
+Ms. D.N.M. Hettiarachchi (Lecturer (On Contract))
+Email:
+malshanihettiarachchi@sjp.ac.lk
+Tel:
+Web:
+Academic Support
+Mr. K. D. T. Rangana
+(Instructor – Computer Technology)
+MSc in IT & Strategic Innovation(Kingston University, UK), BIT(UCSC)
+Email:
+kdtrangana@sjp.ac.lk
+Tel:
+Web:
+Temporary Staff
+Ms. S. Romenia Silva
+(Temporary Instructor)
+Email:
+romaniasilva@sjp.ac.lk
+Tel:
+Web:
+Ms. D. P. Kulugammana
+(Temporary Instructor)
+Email: dilmipraveena@sjp.ac.lk
+Tel:
+Web:
+Mr. G. Vidura Perera
+(Temporary Assistant Lecturer)
+Email: viduraperera@sjp.ac.lk
+Tel:
+Web:
+Mr. E. K. D. I. G. Edirimanne
+(Temporary Instructor)
+Email: kanishkaedirimanne@sjp.ac.lk
+Tel:
+Web:
+Ms. N.C.N. Kaluarachchi
+(Temporary Assistant Lecturer)
+Email: nayominilupama@sjp.ac.lk
+Tel:
+Web:
+Non-Academic
+Ms. Sriyanganie Mendis
+(Deputy Registrar – On Contract)
+MBA (Rajarata University of Sri Lanka), PGDM, BA (USJP)
+Email:
+reg.foc@sjp.ac.lk
+Tel:
+Web:
+Mr. P.A.P.L. Perera
+(Acting Management Assistant)
+Email: pathumperera@sjp.ac.lk
+Tel:
+Web:
+Ms.
+P.H.W. Perera
+(Management Assistant – On Contract)
+Email:
+Tel: +94 11 2758483
+Web:
+Ms.
+G.H.W. Perera
+(Management Assistant – On Contract)
+Email:
+Tel: +94 11 2758483
+Web:
+Mr. E.K.S.D. Wijenayaka
+(Acting Work Aid)
+Email: shalika@sjp.ac.lk
+Tel:
+Web:
+Former Staff
+Ms.
+K.G.L.S. Gamage
+(Lecturer (Probationary))
+Ms.
+A. P. K. J. Prasadika
+(Lecturer (On Contract))
+Ms. L. K. T. Suvimali
+(Temporary Instructor)
+Ms. Virginie Labrooy
+(Acting Assistant Registrar)
+Ms.
+Keshani Ridimahaliyadda
+(Management Assistant – On Contract)
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- DEPARTMENTS ---
+Departments – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Departments
+The faculty consists of three departments namely,
+Department of Scientific Computing
+Department of Knowledge Engineering and Communication
+Department of Information Systems Engineering and Informatics
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- COURSES ---
+COURSES – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+COURSES
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Software Engineering
+Bachelor of Computing Honours in Information Systems
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- CS_DEGREE ---
+Bachelor of Computing Honours in Computer Science – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Computer Science (B.Comp. Hons. Computer Science) degree program has been designed to produce all-round graduates who are capable of either exceling in careers in IT industry or in any computing and related research world through the accumulated knowledge and through the developed hard and soft skills. The graduates who passing out through this program should be versatile in the knowledge drawn from standard topics in computer science, information and communication technology and other peripheral subject areas.
+Course Details
+Duration:
+4 Years
+( 120 GPA credits + 7 NGPA credits)
+Content
+First Year
+Professional English
+Principles of Management
+Introductory Statistics
+Discrete Mathematics
+Computer System Organization
+Fundamentals of Programming
+Introduction to Software Engineering
+Leadership and Human Skills Development
+Objected Oriented Programming
+Database Management Systems
+Data Structures and Algorithms
+Operating Systems
+Computer System Architecture
+Rapid Application Development
+Algebra for Computing
+Second Year
+Group Project
+Data Communication and Networks
+Object Oriented Analysis and Design
+Web Technologies
+Statistical Distribution and Inferences
+Mathematics for computing
+Artificial Intelligence
+Computer Graphics
+Knowledge Representation
+Software Quality Assurance
+Differential Equations
+Service Oriented Web Applications
+Industrial Inspection
+Software Architecture and Design Patterns
+Third Year
+Research Methodologies
+Social and Professional Issues in Information Technology
+High Performance Computing
+Advanced Data Structures and Algorithms
+Computer Security
+Machine Learning
+Visual Computing
+Software Project Management
+Theory of Computation
+Mobile Computing
+Digital Image Processing and Computer Vision
+Independent Research Studies
+Human Computer Interactions
+Natural Language Processing
+Theory of Programming Languages
+Multimedia Systems
+Deep Learning
+Middleware Architecture
+Big Data Analytics
+Fourth Year
+Individual Research Project
+Cloud Computing and Network Security
+Emerging Trends in computing
+Robotics and Automation
+Nature Inspired Algorithms
+Mathematical Modeling and Simulation
+Embedded Systems and Internet of Things
+Game development
+Bioinformatics
+Complex Systems and Agent Technology
+Operational Research
+Industrial Training
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- SE_DEGREE ---
+Bachelor of Computing Honours in Software Engineering – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Bachelor of Computing Honours in Software Engineering
+Bachelor of Computing Honours in Software Engineering (B.Comp. Hons. in Software Engineering) degree program has been designed to produce all-round graduates who are capable of either exceling in careers in software industry or in computing and related research world through the accumulated knowledge and through the developed hard and soft skill. The graduates passing out through this program should be versatile in the knowledge drawn from standard topics mainly in software engineering and other peripheral subject areas covering computing and information and communication technologies.
+Course Details
+Duration:
+4 Years
+( 120 GPA credits + 7 NGPA credits)
+Course Content
+First Year
+Professional English
+Principles of Management
+Introductory Statistics
+Discrete Mathematics
+Computer System Organization
+Fundamentals of Programming
+Introduction to Software Engineering
+Leadership and Human Skills Development
+Object Oriented Programming
+Database Management Systems
+Data Structures and Algorithms
+Formal Methods in Software Development
+Operating Systems
+Rapid Application Development
+Advanced Mathematics
+Second Year
+Group Project
+Data Communication and Networks
+Object Oriented Analysis and Design
+Web Technologies
+Software Project Management
+Mathematics for computing
+Artificial Intelligence
+Essentials of Computer Law
+Fundamentals of Software Security
+Software testing and validation
+Software Quality Assurance
+Software Architecture and Design Patterns
+Software Configuration Management
+Industrial Inspection
+Management Information Systems
+Third Year
+Research Methodologies
+Software safety and reliability
+Social and Professional Issues in Information Technology
+Software Process Management
+Enterprise Information Systems
+Machine Learning
+Visual Computing
+Introduction to Business Intelligence
+High Performance Computing
+Mobile Computing
+Digital Image Processing and Computer Vision
+Natural Language Processing
+Human Computer Interactions
+Independent Research Studies
+Software Evolution
+Human Resource Management
+Middleware Architecture
+Deep leaning
+Big Data Analytics
+Forth Year
+Individual Research Project
+Cloud Computing and Network Security
+Service Oriented Architecture
+Software Engineering Economics
+Robotics and Automation
+Embedded Systems and IOT
+Refactoring and Design
+Emerging Trends in Computing
+Game Designing and Development
+Bio Informatics
+Game Design and development
+Complex Systems and Agent Technology
+Industrial Training
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- IS_DEGREE ---
+Bachelor of Computing Honours in Information Systems – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Information Systems (B.Comp. Information Systems) degree program has been designed to produce graduates with sound knowledge of the principles of information systems, with a special focus on large and critical systems, as to meet the increasing demand from both industrial and service sectors locally and internationally. As this degree program directly related to many professions and positions in the IT industry, it focuses on achieving many objectives through out this degree program. The set of objectives includes to produce graduates equipped with analytical and practical skills essential in developing computerized systems which comply with international standards as well as qualified Information System Engineers and IT personnel for the Sri Lankan job market, and to prepare industry-required graduates in a broad spectrum of fields such as information systems, software project management, software deployment and integration, and software quality assurance.
+Course Details
+Duration:
+4 Years
+( 120 GPA credits + 7 NGPA credits)
+Course Content
+First Year
+Professional English
+Principles of Management
+Introductory Statistics
+Introductory Mathematics
+Fundamentals of Information Systems
+Fundamentals of Programming
+Introduction to Software Engineering
+Leadership and Human Skills Development
+Object Oriented Programming
+Database Management System
+Data Structures and Algorithms
+Marketing Management
+Economics & Accounting
+Rapid Application Development
+Business Communication
+Second Year
+Business Process Management
+Operations Management
+Object Oriented Analysis and Design
+Information Systems Security
+Organizational Behaviour and Society
+Statistical Distribution and Inferences
+Data Communication and Networks
+Enterprise Applications
+Information System Risk Management
+Introduction to Entrepreneurship and SMEs
+Operating System Concepts
+Management Information Systems
+Industrial Inspection
+Productivity with IS technology
+System Administration and Maintenance
+Agile Software Development
+Third Year
+Group Project
+Social and Professional Issues in Information Technology
+Artificial Intelligence
+E-commerce and Digital Marketing
+Design Patterns and Applications
+Research Methodologies
+Business Intelligence
+Software Project Management
+Social Computing
+Mobile Computing
+IT Procurement Management
+Digital Business
+Web Technologies
+E-Learning and Instructional Design
+Natural Language Processing
+Software Engineering Economics
+Middleware Architecture
+Multimedia Systems
+Machine Learning
+Human Computer Interactions
+Forth Year
+Individual Research Project
+Emerging Trends in ICT
+Ethical Issues and Legal Aspects of Information Technology
+Human Resource Management
+Big Data Analytics
+Cloud Computing and Network Security
+Data Mining and Applications
+Refactoring and Design
+Bioinformatics
+Deep Learning Applications
+Complex Systems and Agent Technology
+Industrial Training
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
+
+
+--- CONTACT ---
+Contact – Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka
+Skip to content
+Contact
+Faculty of Computing, University of Sri Jayewardenepura Gangodawila, Nugegoda, Sri Lanka.
++94 11 2758000, +94 11 2802022
++94 11 2801024, +94 11 2801025
+info@sjp.ac.lk
+Recent
+Faculty of Computing, USJ signs Landmark MoU with HUTCH to Empower Future Tech Leaders
+September 25, 2025
+Dive into the Future of AI-Driven Enterprises: FoC’s Transformative Visit to IFS R&D International
+August 7, 2025
+Tech Ecosystem Inspires the Next Wave of Innovators: FoC’s Futuristic Visit to CodeGen International
+August 7, 2025
+Where Healthcare Meets High-Tech: FoC Explores Health Tech Innovation at Cambio Software Sri Lanka
+August 7, 2025
+Connecting to the Core of Telecom: FoC’s Technical Tour at Hutch
+August 7, 2025
+Quick Links
+Bachelor of Computing Honours in Computer Science
+Bachelor of Computing Honours in Information Systems
+Bachelor of Computing Honours in Software Engineering
+Department of Information Systems Engineering and Informatics
+Department of Knowledge Engineering and Communication
+Department of Scientific Computing
+FoC – Useful Links
+FoC – වෙසක් තොරණ
+FoC Calendar – 2025
+Jayewardenepura Computing Symposium – 2026 (JCoS 2026)
+Notices
+Research
+Sample Page
+Sample PHP Page
+Staff
+Useful References
+Copyright © 2025 Faculty of Computing | University of Sri Jayewardenepura, Sri Lanka.
