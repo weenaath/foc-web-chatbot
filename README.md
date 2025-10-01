@@ -22,14 +22,14 @@ It uses the **Groq API (LLaMA models)** along with a **cleaned knowledge base** 
 ---
 
 ## 📂 Project Structure
-foc-web-chatbot/
-│── bot.py # Main chatbot script (Groq API + knowledge base)
-│── scraper.py # Scraper for faculty website (optional)
-│── faculty_content.txt # Cleaned knowledge base
-│── .env # API key stored here
-│── requirements.txt # Python dependencies
-│── README.md # Project documentation
-│── venv/ # Virtual environment (not pushed to GitHub)
+foc-web-chatbot/  
+│── bot.py # Main chatbot script (Groq API + knowledge base)  
+│── scraper.py # Scraper for faculty website (optional)  
+│── faculty_content.txt # Cleaned knowledge base  
+│── .env # API key stored here  
+│── requirements.txt # Python dependencies  
+│── README.md # Project documentation  
+│── venv/ # Virtual environment (not pushed to GitHub)  
 
 ## ⚙️ Setup & Installation
 
