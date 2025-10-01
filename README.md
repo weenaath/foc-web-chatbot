@@ -34,11 +34,11 @@ foc-web-chatbot/
 ## ⚙️ Setup & Installation
 
 1. **Clone the repo**  
-   `git clone https://github.com/yourusername/foc-web-chatbot.git`
+   `git clone https://github.com/yourusername/foc-web-chatbot.git`  
    `cd foc-web-chatbot`
 
 2. **Create & activate virtual environment**  
-   `python -m venv venv`
+   `python -m venv venv`  
    `venv\Scripts\activate   #on Windows CMD`
    ## OR
    `.\venv\Scripts\Activate #on PowerShell`
