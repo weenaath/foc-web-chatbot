@@ -45,7 +45,7 @@ def polish_answer(answer: str) -> str:
 
 
 if __name__ == "__main__":
-    print("🤖 Faculty Chatbot (Groq API) is running! Type 'quit' to exit.")
+    print("🤖 Faculty of Computing Chatbot is running! Type 'quit' to exit.")
     while True:
         user_input = input("You: ")
         if user_input.lower() in ["quit", "exit"]:
