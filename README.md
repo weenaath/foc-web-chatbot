@@ -33,25 +33,25 @@ foc-web-chatbot/
 
 ## ⚙️ Setup & Installation
 
-1. **Clone the repo**
+1. **Clone the repo**  
    git clone https://github.com/yourusername/foc-web-chatbot.git
    cd foc-web-chatbot
 
-2. **Create & activate virtual environment**
+2. **Create & activate virtual environment**  
    python -m venv venv
    venv\Scripts\activate   # on Windows CMD
-   # OR
+   ## OR
    .\venv\Scripts\Activate # on PowerShell
 
-3. **Install dependencies**
+3. **Install dependencies**  
    pip install -r requirements.txt
 
-3. **Set up API key**
+3. **Set up API key**  
    GROQ_API_KEY=your_api_key_here # I used Groq API for this
 
-4. **▶️ Run the Chatbot**
+4. **▶️ Run the Chatbot**  
    python bot.py
 
-   **You should see:**
+   **You should see:**  
    🤖 Faculty of Computing Chatbot is running! Type 'quit' to exit.
    You:
