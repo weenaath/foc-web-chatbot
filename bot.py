@@ -21,7 +21,7 @@ def chat_with_bot(user_input):
                 {"role": "system", "content": (
                     "You are a helpful assistant that answers questions "
                     "about the Faculty of Computing at University of Sri Jayewardenepura. "
-                    "Only use the following information as your knowledge base:\n\n"
+                    "Only use the following information as your knowledge base. Carefully read and understand before answering:\n\n"
                     + FACULTY_CONTENT
                 )},
                 {"role": "user", "content": user_input}
